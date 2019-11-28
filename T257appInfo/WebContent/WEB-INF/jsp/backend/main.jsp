@@ -5,7 +5,7 @@
 	<div class="title_left">
 		<h3>
 			<h3>
-			欢迎你：${UserService.userName }<strong> | 角色：${UserService.userTypeName }</strong>
+			欢迎你：${userName }<strong> | 角色：后台管理员</strong>
 			</h3>
 		</h3>
 	</div>
