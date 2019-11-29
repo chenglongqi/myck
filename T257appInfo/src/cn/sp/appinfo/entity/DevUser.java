@@ -2,7 +2,7 @@ package cn.sp.appinfo.entity;
 
 import java.util.Date;
 
-public class DevUser {
+public class DevUser {  //开发者实体类
 	private Integer id;//主键id
 	private String devCode;//开发者帐号(系统登录账号)
 	private String devName;//开发者名称

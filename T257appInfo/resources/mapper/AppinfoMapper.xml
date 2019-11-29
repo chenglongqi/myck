@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sp.appinfo.dao.AppinfoDao">
+	<select id="getall" resultType="Appinfo">
+		SELECT
+		a.softwareName,a.APKName,a.softwareSize,
+		a.flatformId,
+		(SELECT d.valueName FROM data_dictionary d WHERE a.flatformId=d.valueId AND
+		typeCode='APP_FLATFORM') AS flatformName,
+		a.categoryLevel1,
+		(SELECT c.categoryName FROM app_category c WHERE a.categoryLevel1=c.id) AS
+		categoryLevel1Name,
+		a.categoryLevel2,
+		(SELECT c.categoryName FROM app_category c WHERE a.categoryLevel2=c.id) AS
+		categoryLevel2Name,
+		a.categoryLevel3,
+		(SELECT c.categoryName FROM app_category c WHERE a.categoryLevel3=c.id) AS
+		categoryLevel3Name,
+		a.flatformId,
+		(SELECT d.valueName FROM data_dictionary d WHERE a.flatformId=d.valueId AND
+		typeCode='APP_STATUS') AS statusName,a.downloads,
+		a.versionId,
+		(SELECT v.versionNo FROM app_version v WHERE a.versionId=v.id) AS versionNo
+		FROM app_info a
+	</select>
+</mapper>

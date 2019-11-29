@@ -1,4 +1,4 @@
-package cn.sp.appinfo.service.inpl;
+package cn.sp.appinfo.service.impl;
 
 import javax.annotation.Resource;
 
